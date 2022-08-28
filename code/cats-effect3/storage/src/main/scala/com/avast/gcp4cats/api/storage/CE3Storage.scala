@@ -1,12 +1,15 @@
-package com.avast.gcp4s.api.storage
+package com.avast.gcp4cats.api.storage
 
 import cats.effect.{Resource, Sync}
-import com.avast.gcp4s.ce3.common.FS2Utils
+import com.avast.gcp4cats.ce3.common.FS2Utils
 import com.google.api.gax.paging.Page
-import com.google.cloud.storage.Storage.BlobSourceOption
-import com.google.cloud.{ReadChannel, WriteChannel}
+import com.google.cloud.storage.Storage.{
+  BlobListOption,
+  BlobSourceOption,
+  BucketListOption
+}
 import com.google.cloud.storage.{Blob, BlobId, BlobInfo, Bucket}
-import com.google.cloud.storage.Storage.{BlobListOption, BucketListOption}
+import com.google.cloud.{ReadChannel, WriteChannel}
 import fs2.Stream
 
 import java.nio.file.Path

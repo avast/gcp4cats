@@ -1,10 +1,9 @@
-package com.avast.gcp4s.api.storage
+package com.avast.gcp4cats.api.storage
 
 import cats.effect.Sync
-import com.avast.gcp4s.ce3.common.FS2Utils
+import com.avast.gcp4cats.ce3.common.FS2Utils
 import com.google.cloud.storage.{BlobId, BlobInfo}
-import fs2.Pipe
-import fs2.Stream
+import fs2.{Pipe, Stream}
 
 import java.nio.channels.Channels
 

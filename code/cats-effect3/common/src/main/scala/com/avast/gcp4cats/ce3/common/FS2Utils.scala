@@ -1,4 +1,4 @@
-package com.avast.gcp4s.ce3.common
+package com.avast.gcp4cats.ce3.common
 
 import cats.effect.Sync
 import cats.implicits.toFunctorOps

@@ -1,13 +1,13 @@
-package com.avast.gcp4s.api.storage
+package com.avast.gcp4cats.api.storage
 
 import cats.effect.Resource
-import com.google.cloud.{ReadChannel, WriteChannel}
-import com.google.cloud.storage.{Blob, BlobId, BlobInfo, Bucket}
 import com.google.cloud.storage.Storage.{
   BlobListOption,
   BlobSourceOption,
   BucketListOption
 }
+import com.google.cloud.storage.{Blob, BlobId, BlobInfo, Bucket}
+import com.google.cloud.{ReadChannel, WriteChannel}
 import fs2.Stream
 
 import java.nio.file.Path
