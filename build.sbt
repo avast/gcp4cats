@@ -34,4 +34,9 @@ lazy val ce3StorageModule = (project in file("code/cats-effect3/storage"))
 lazy val root = (project in file("."))
   .aggregate(apiStorageModule, ce3StorageModule)
 
-// See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
+addCommandAlias(
+  "checkAll",
+  "scalafmtSbtCheck; scalafmtCheckAll; +test; doc;" // site/makeMdoc"
+)
+
+addCommandAlias("fixAll", "; scalafmtSbt; scalafmtAll")
