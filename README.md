@@ -5,6 +5,7 @@ Scala requires a lot of repetition and boilerplate. It would be very useful to h
 lifting of the Java API into Scala Universe. This is that library.
 
 ## Goals
-- Keep the API close to official JVM API. This way we can leverage all the great documentation already provided for JVM API.
+### 1. Keep the API close to official JVM API.
+This way we can leverage all the great documentation already provided for JVM API as well as ensure easy maintenance for the years to come
 
 
