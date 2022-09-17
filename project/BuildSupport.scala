@@ -4,10 +4,8 @@ import mdoc.MdocPlugin.autoImport._
 import microsites.MicrositesPlugin.autoImport._
 import sbt.Keys._
 import sbt._
-import sbtunidoc.ScalaUnidocPlugin.autoImport._
 import sbtdynver.DynVerPlugin.autoImport._
-
-import scala.collection.immutable
+import sbtunidoc.ScalaUnidocPlugin.autoImport._
 
 object BuildSupport {
   object ScalaVersions {
@@ -51,6 +49,8 @@ object BuildSupport {
     addMappingsToSiteDir(
       ScalaUnidoc / packageDoc / mappings,
       ScalaUnidoc / siteSubdirName
-    )
+    ),
+    micrositePushSiteWith := GitHub4s,
+    micrositeGithubToken := sys.env.get("SBT_MICROSITE_PUBLISH_TOKEN")
   )
 }
