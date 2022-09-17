@@ -14,8 +14,6 @@ addSbtPlugin("com.github.sbt" % "sbt-unidoc" % "0.5.0")
 
 addSbtPlugin("com.thoughtworks.sbt-api-mappings" % "sbt-api-mappings" % "3.0.2")
 
-//addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.6.1")
-
 addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat" % "0.4.1")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.10.1")
