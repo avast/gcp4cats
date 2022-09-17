@@ -1,4 +1,4 @@
-import BuildSupport.ScalaVersions.*
+import BuildSupport.ScalaVersions._
 
 ThisBuild / versionScheme := Some("early-semver")
 
@@ -90,13 +90,30 @@ lazy val ce3StorageModule = (project in file("code/cats-effect3/storage"))
     )
   )
 
+lazy val site = (project in file("site"))
+  .settings(scalaSettings)
+  .settings(commonSettings)
+  .disablePlugins(MimaPlugin)
+  .enablePlugins(
+    MdocPlugin,
+    MicrositesPlugin,
+    SiteScaladocPlugin,
+    ScalaUnidocPlugin
+  )
+  .settings(
+    libraryDependencies += Dependencies.Mdoc.libMdoc
+  )
+  .settings(publish / skip := true)
+  .settings(BuildSupport.micrositeSettings: _*)
+  .dependsOn(apiStorageModule, ce3CommonModule, ce3StorageModule)
+
 lazy val global = project
   .in(file("."))
   .settings(name := "gcp4cats")
   .settings(mimaSettings)
   .settings(commonSettings)
   .settings(scalaSettings)
-  .aggregate(ce3StorageModule, ce3CommonModule, apiStorageModule)
+  .aggregate(ce3StorageModule, ce3CommonModule, apiStorageModule, site)
   .dependsOn(ce3StorageModule, ce3CommonModule, apiStorageModule)
   .disablePlugins(MimaPlugin)
 
