@@ -49,8 +49,6 @@ object BuildSupport {
     addMappingsToSiteDir(
       ScalaUnidoc / packageDoc / mappings,
       ScalaUnidoc / siteSubdirName
-    ),
-    micrositePushSiteWith := GitHub4s,
-    micrositeGithubToken := sys.env.get("SBT_MICROSITE_PUBLISH_TOKEN")
+    )
   )
 }
