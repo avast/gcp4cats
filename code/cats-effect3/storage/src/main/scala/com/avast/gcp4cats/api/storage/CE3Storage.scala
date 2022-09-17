@@ -19,11 +19,11 @@ class CE3Storage[F[_]: Sync](storage: GCSStorage, fs2Utils: FS2Utils)
   protected val F: Sync[F] = Sync[F]
 
   override def list(opts: BucketListOption*): Stream[F, Bucket] = {
-    blockingAsStream(storage.list(opts: _*))
+    blockingAsStream(storage.list(opts *))
   }
 
   override def list(bucket: String, opts: BlobListOption*): Stream[F, Blob] = {
-    blockingAsStream(storage.list(bucket, opts: _*))
+    blockingAsStream(storage.list(bucket, opts *))
   }
 
   override def writer(blobInfo: BlobInfo): Resource[F, WriteChannel] = {
@@ -43,6 +43,6 @@ class CE3Storage[F[_]: Sync](storage: GCSStorage, fs2Utils: FS2Utils)
       path: Path,
       options: BlobSourceOption*
   ): F[Unit] = {
-    F.interruptible(storage.downloadTo(blobId, path, options: _*))
+    F.interruptible(storage.downloadTo(blobId, path, options *))
   }
 }

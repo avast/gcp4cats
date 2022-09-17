@@ -1,5 +1,28 @@
 import sbt._
 
 object Dependencies {
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.2.11"
+  object Cats {
+    val effect = "org.typelevel" %% "cats-effect" % "3.3.14"
+    val core = "org.typelevel" %% "cats-core" % "2.7.0"
+  }
+
+  object FS2 {
+    val core = "co.fs2" %% "fs2-core" % "3.2.14"
+    val io = "co.fs2" %% "fs2-io" % "3.2.14"
+  }
+
+  object Testing {
+    val mockitoScalatest = "org.mockito" %% "mockito-scala-scalatest" % "1.15.1"
+    val munit = "org.scalameta" %% "munit" % "0.7.29"
+  }
+
+  object GCP {
+    val storage = "com.google.cloud" % "google-cloud-storage" % "2.11.3"
+  }
+
+  object ScalaModules {
+    val collectionCompat =
+      "org.scala-lang.modules" %% "scala-collection-compat" % "2.8.1"
+  }
+
 }

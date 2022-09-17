@@ -5,7 +5,7 @@ import cats.implicits.toFunctorOps
 import com.google.api.gax.paging.Page
 import fs2.{Chunk, Stream}
 
-import scala.jdk.CollectionConverters.IterableHasAsScala
+import scala.jdk.CollectionConverters.*
 
 trait FS2Utils {
   def streamPage[F[_]: Sync, A](page: Page[A]): Stream[F, A] = {
